@@ -29,6 +29,7 @@ jobs:
       - name: Replace secret placeholder
         run: |
           sed -i 's/\[SECRET_PLACEHOLDER\]/${{ secrets.DEMO_SECRET }}/g' index.html
+          sed -i 's/\[MONGO_PLACEHOLDER\]/${{ secrets.MONGODB_CREDS_USERNAME }}/g' index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
